@@ -135,13 +135,22 @@ def insert_batch(cur, table, cols, batch):
 def load_raw_data_to_stg():
     try:
         conn = get_connection('postgres')
+        logger.info("🔌 Connected to Postgres")
+        
+        for table, mapping in MAPPINGS.items():
+            logger.info("🔹 Start loading %s", table)
+            load_json_to_stg(conn, table, mapping)
+
+        logger.info("✅ All raw data loaded into STG")
+  
     except psycopg2.OperationalError as e:
         logger.error("❌ Failed to connect to Postgres: %s", e)
         raise
-    try:
-        for table, mapping in MAPPINGS.items():
-            load_json_to_stg(conn, table, mapping)
+    
     except Exception as e:
-        print("❌ Lỗi khi load dữ liệu vào STG:", e)
+        logger.exception("❌ Error while loading raw data into STG")
+        raise
     finally:
-        conn.close()
+        if conn:
+            conn.close()
+            logger.info("🔒 Connection closed")

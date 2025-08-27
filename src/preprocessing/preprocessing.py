@@ -6,7 +6,6 @@ import pandas as pd
 import json
 
 def subsampling():
-  print('123')
   sample_size = 100000
   input_data_path = os.path.join(DATA_RAW_DIR,'raw' , 'yelp_academic_dataset_review.json')
   output_data_path = os.path.join(DATA_RAW_DIR, 'subsampling', 'review.json')
