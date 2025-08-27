@@ -1,6 +1,6 @@
 from config.settings import JDBC_URL
 from src.utils.db import load_db_config
-
+from config.logger_config import logger
 
 def load_to_postgres(df, table_name, mode="append"):
     try:
@@ -15,6 +15,8 @@ def load_to_postgres(df, table_name, mode="append"):
             .option("driver", "org.postgresql.Driver") \
             .mode(mode) \
             .save()
-        print(f"✅ Load thành công vào bảng {table_name}")
+        logger.info("Successful loaded to %s", table_name)
+        
     except Exception as e:
-        print(f"❌ Lỗi khi load vào {table_name}: {e}")
+        logger.error("❌ Failed to load %s: %s", table_name, e)
+        raise
