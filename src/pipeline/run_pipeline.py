@@ -74,18 +74,18 @@ def etl_pipeline():
     spark = spark_session()
     
     # # init db
-    # init_schema()
+    init_schema()
     
     # # extract and load to stg
-    # load_raw_data_to_stg()
+    load_raw_data_to_stg()
     
-    # run_dim_locatin_pipeline(spark=spark)
-    # run_dim_time_pipeline(spark=spark)
-    # run_dim_business_pipeline(spark=spark)
-    # run_dim_category_pipeline(spark=spark)
-    # run_bridge_category_pipeline(spark=spark)
-    # run_dim_user_pipeline(spark=spark)
-    # run_fact_review_pipeline(spark=spark)
+    run_dim_locatin_pipeline(spark=spark)
+    run_dim_time_pipeline(spark=spark)
+    run_dim_business_pipeline(spark=spark)
+    run_dim_category_pipeline(spark=spark)
+    run_bridge_category_pipeline(spark=spark)
+    run_dim_user_pipeline(spark=spark)
+    run_fact_review_pipeline(spark=spark)
     run_fact_checkin_pipeline(spark=spark)
     # extract and load to dw
     # transform and load data to dw
@@ -93,4 +93,5 @@ def etl_pipeline():
     spark.stop()
   except Exception as e:
     logger.error("Lỗi ở ETL, %s", e)
+    raise
   
