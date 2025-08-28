@@ -2,7 +2,7 @@ from config.logger_config import logger
 from src.load.load_stg import load_raw_data_to_stg
 from scripts.init_schema import init_schema
 from src.utils.spark import spark_session
-from src.load.load_dw import load_to_postgres
+from src.load.load_dw import load_to_postgres, load_to_postgres_via_copy
 from src.extract.extract import read_data_from_pg
 
 from src.transform.dim_time import create_dim_time
@@ -12,7 +12,7 @@ from src.transform.fact_review import transform_fact_review
 from src.transform.dim_location import transform_dim_location
 from src.transform.fact_checkin import transform_fact_checkin
 
-
+import time
 
 def run_dim_user_pipeline(spark):
   stg_user = read_data_from_pg(spark, 'postgres', 'stg_user', 'stg')
@@ -66,26 +66,31 @@ def run_fact_checkin_pipeline(spark):
   dim_business = read_data_from_pg(spark, 'postgres', "dim_business", "dw")
   dim_time = read_data_from_pg(spark, 'postgres', "dim_time", "dw")
   
+  
   fact_checkin = transform_fact_checkin(spark, stg_checkin, dim_business, dim_time)
-  load_to_postgres(fact_checkin, 'dw.fact_checkin')
+  start = time.time()
+  load_to_postgres_via_copy(fact_checkin, 'dw.fact_checkin')
+  end = time.time()
+  print(f"loading time: {end - start: .2f}")
+  # load_to_postgres(fact_checkin, 'dw.fact_checkin')
   
 def etl_pipeline():
   try:
     spark = spark_session()
     
     # # init db
-    init_schema()
+    # init_schema()
     
     # # extract and load to stg
-    load_raw_data_to_stg()
+    # load_raw_data_to_stg()
     
-    run_dim_locatin_pipeline(spark=spark)
-    run_dim_time_pipeline(spark=spark)
-    run_dim_business_pipeline(spark=spark)
-    run_dim_category_pipeline(spark=spark)
-    run_bridge_category_pipeline(spark=spark)
-    run_dim_user_pipeline(spark=spark)
-    run_fact_review_pipeline(spark=spark)
+    # run_dim_locatin_pipeline(spark=spark)
+    # run_dim_time_pipeline(spark=spark)
+    # run_dim_business_pipeline(spark=spark)
+    # run_dim_category_pipeline(spark=spark)
+    # run_bridge_category_pipeline(spark=spark)
+    # run_dim_user_pipeline(spark=spark)
+    # run_fact_review_pipeline(spark=spark)
     run_fact_checkin_pipeline(spark=spark)
     # extract and load to dw
     # transform and load data to dw
