@@ -1,7 +1,8 @@
 from pyspark.sql.functions import col, year, quarter, month, hour, dayofmonth, dayofweek, explode, weekofyear, quarter, date_format
 from src.load.load_dw import load_to_postgres
+from prefect import task
 
-
+@task
 def create_dim_time(spark, start_date: str, end_date: str):
     df = spark.sql(f"""
         SELECT sequence(

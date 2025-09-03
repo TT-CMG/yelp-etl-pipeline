@@ -1,0 +1,45 @@
+2025-08-28 12:19:13,344 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
+2025-08-28 12:19:40,461 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
+2025-08-28 12:19:40,463 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
+2025-08-28 12:19:43,345 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
+2025-08-28 12:19:43,347 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
+2025-08-28 12:19:45,794 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
+2025-08-28 12:19:47,200 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
+2025-08-28 12:20:57,275 [ERROR] config.logger_config: ❌ Failed to load dw.fact_checkin via COPY: [Errno 18] Invalid cross-device link: '/tmp/tmp28yyukqs/part-00000-81c3109e-bd15-4396-8232-ceb33bbb35e9-c000.csv' -> '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
+2025-08-28 12:20:57,305 [WARNING] config.logger_config: ⚠️ Could not clean up temp files: [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
+2025-08-28 12:20:57,950 [ERROR] config.logger_config: Lỗi ở ETL, [Errno 18] Invalid cross-device link: '/tmp/tmp28yyukqs/part-00000-81c3109e-bd15-4396-8232-ceb33bbb35e9-c000.csv' -> '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
+2025-08-28 12:20:58,959 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-28 12:25:50,144 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
+2025-08-28 12:26:01,030 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
+2025-08-28 12:26:01,031 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
+2025-08-28 12:26:01,901 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
+2025-08-28 12:26:01,902 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
+2025-08-28 12:26:01,186 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
+2025-08-28 12:26:01,699 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
+2025-08-28 12:27:02,686 [ERROR] config.logger_config: ❌ Failed to load dw.fact_checkin via COPY: [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
+2025-08-28 12:27:02,693 [WARNING] config.logger_config: ⚠️ Could not clean up temp files: [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
+2025-08-28 12:27:02,700 [ERROR] config.logger_config: Lỗi ở ETL, [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
+2025-08-28 12:27:02,832 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-28 12:30:37,038 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
+2025-08-28 12:30:46,861 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
+2025-08-28 12:30:46,862 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
+2025-08-28 12:30:47,796 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
+2025-08-28 12:30:47,797 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
+2025-08-28 12:30:48,344 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
+2025-08-28 12:30:48,991 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
+2025-08-28 12:31:42,868 [ERROR] config.logger_config: ❌ Failed to load dw.fact_checkin via COPY: missing data for column "checkin_count"
+CONTEXT:  COPY fact_checkin, line 2: "53007,2017051123,1"
+
+2025-08-28 12:31:42,902 [ERROR] config.logger_config: Lỗi ở ETL, missing data for column "checkin_count"
+CONTEXT:  COPY fact_checkin, line 2: "53007,2017051123,1"
+
+2025-08-28 12:31:41,576 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-28 12:36:32,107 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
+2025-08-28 12:36:41,884 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
+2025-08-28 12:36:41,885 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
+2025-08-28 12:36:42,836 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
+2025-08-28 12:36:42,836 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
+2025-08-28 12:36:43,522 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
+2025-08-28 12:36:44,333 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
+2025-08-28 12:45:44,663 [INFO] config.logger_config: ✅ Successfully loaded to dw.fact_checkin via COPY
+2025-08-28 12:45:46,348 [INFO] py4j.clientserver: Closing down clientserver connection

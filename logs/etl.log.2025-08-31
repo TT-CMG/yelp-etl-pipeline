@@ -1,0 +1,145 @@
+2025-08-31 10:02:33,135 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:02:33,137 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:02:33,262 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:05:42,213 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:05:42,214 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:05:42,225 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:15:02,597 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:15:02,598 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:15:02,608 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:15:24,013 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:15:24,013 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:15:24,024 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:16:15,393 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+2025-08-31 10:16:15,394 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:16:58,702 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:16:58,702 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:16:58,713 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:18:11,143 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:18:11,143 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:18:11,155 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:19:10,149 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:19:10,149 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:19:10,161 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:47:46,375 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:47:46,396 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:47:46,602 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:50:48,935 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+2025-08-31 10:50:48,947 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:53:26,009 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:53:26,010 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:53:26,022 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 10:56:31,068 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 10:56:31,069 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'stop'
+2025-08-31 10:56:31,078 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 11:00:05,519 [ERROR] config.logger_config: ❌ Lỗi kết nối với Postgres: 'JavaPackage' object is not callable
+2025-08-31 11:00:05,520 [INFO] config.logger_config: ▶️ Start reading table stg.stg_business from database postgres
+2025-08-31 11:00:05,589 [ERROR] config.logger_config: ❌ Failed to read stg.stg_business from postgres: 'NoneType' object has no attribute 'read'
+2025-08-31 11:00:05,589 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'show'
+2025-08-31 11:00:05,606 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 11:31:46,219 [INFO] config.logger_config: ▶️ Start reading table stg.stg_business from database postgres
+2025-08-31 11:31:58,919 [ERROR] config.logger_config: ❌ Failed to read stg.stg_business from postgres: An error occurred while calling o37.load.
+: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProviderBase.create(ConnectionProvider.scala:102)
+	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1(JdbcDialects.scala:161)
+	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1$adapted(JdbcDialects.scala:157)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.getQueryOutputSchema(JDBCRDD.scala:63)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.resolveTable(JDBCRDD.scala:58)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRelation$.getSchema(JDBCRelation.scala:241)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:37)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:172)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 30 more
+
+2025-08-31 11:31:58,924 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'show'
+2025-08-31 11:31:58,956 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 11:32:31,632 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 11:33:02,320 [INFO] config.logger_config: ▶️ Start reading table stg.stg_business from database postgres
+2025-08-31 11:33:13,466 [ERROR] config.logger_config: ❌ Failed to read stg.stg_business from postgres: An error occurred while calling o37.load.
+: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProviderBase.create(ConnectionProvider.scala:102)
+	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1(JdbcDialects.scala:161)
+	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1$adapted(JdbcDialects.scala:157)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.getQueryOutputSchema(JDBCRDD.scala:63)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.resolveTable(JDBCRDD.scala:58)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRelation$.getSchema(JDBCRelation.scala:241)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:37)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:172)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 30 more
+
+2025-08-31 11:33:13,468 [ERROR] config.logger_config: Lỗi ở ETL, 'NoneType' object has no attribute 'show'
+2025-08-31 11:33:13,479 [INFO] py4j.clientserver: Closing down clientserver connection
+2025-08-31 11:35:05,652 [INFO] config.logger_config: ▶️ Start reading table stg.stg_business from database postgres
+2025-08-31 11:35:26,471 [INFO] config.logger_config: ✅ Successfully read stg.stg_business (rows: 150346)
+2025-08-31 11:35:30,819 [INFO] py4j.clientserver: Closing down clientserver connection

@@ -1,7 +1,8 @@
 from pyspark.sql.functions import col, explode, split, trim, lower
 from config.logger_config import logger
+from prefect import task
 
-
+@task
 def transform_category(spark, stg_business):
   try:
     df_exploded = (
@@ -23,6 +24,7 @@ def transform_category(spark, stg_business):
     logger.error("❌ Failed to transform dim_category: %s", e)
     raise
 
+@task
 def transform_bridge_category(spark, stg_business, dim_business, dim_category):
   try:
     df_exploded = (
@@ -48,7 +50,8 @@ def transform_bridge_category(spark, stg_business, dim_business, dim_category):
     logger.error("❌ Failed to transform bridge_category: %s", e)
     raise
   
-  
+
+@task
 def transform_dim_business(spark, business_df, dim_location_df):
   try:
     dim_business_df = business_df \
