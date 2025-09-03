@@ -1,45 +1,55 @@
-2025-08-28 12:19:13,344 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
-2025-08-28 12:19:40,461 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
-2025-08-28 12:19:40,463 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
-2025-08-28 12:19:43,345 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
-2025-08-28 12:19:43,347 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
-2025-08-28 12:19:45,794 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
-2025-08-28 12:19:47,200 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
-2025-08-28 12:20:57,275 [ERROR] config.logger_config: ❌ Failed to load dw.fact_checkin via COPY: [Errno 18] Invalid cross-device link: '/tmp/tmp28yyukqs/part-00000-81c3109e-bd15-4396-8232-ceb33bbb35e9-c000.csv' -> '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
-2025-08-28 12:20:57,305 [WARNING] config.logger_config: ⚠️ Could not clean up temp files: [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
-2025-08-28 12:20:57,950 [ERROR] config.logger_config: Lỗi ở ETL, [Errno 18] Invalid cross-device link: '/tmp/tmp28yyukqs/part-00000-81c3109e-bd15-4396-8232-ceb33bbb35e9-c000.csv' -> '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
-2025-08-28 12:20:58,959 [INFO] py4j.clientserver: Closing down clientserver connection
-2025-08-28 12:25:50,144 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
-2025-08-28 12:26:01,030 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
-2025-08-28 12:26:01,031 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
-2025-08-28 12:26:01,901 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
-2025-08-28 12:26:01,902 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
-2025-08-28 12:26:01,186 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
-2025-08-28 12:26:01,699 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
-2025-08-28 12:27:02,686 [ERROR] config.logger_config: ❌ Failed to load dw.fact_checkin via COPY: [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
-2025-08-28 12:27:02,693 [WARNING] config.logger_config: ⚠️ Could not clean up temp files: [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
-2025-08-28 12:27:02,700 [ERROR] config.logger_config: Lỗi ở ETL, [Errno 21] Is a directory: '/mnt/d/HCMUT/Cao_hoc/Code_/yelp_etl/data/export'
-2025-08-28 12:27:02,832 [INFO] py4j.clientserver: Closing down clientserver connection
-2025-08-28 12:30:37,038 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
-2025-08-28 12:30:46,861 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
-2025-08-28 12:30:46,862 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
-2025-08-28 12:30:47,796 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
-2025-08-28 12:30:47,797 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
-2025-08-28 12:30:48,344 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
-2025-08-28 12:30:48,991 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
-2025-08-28 12:31:42,868 [ERROR] config.logger_config: ❌ Failed to load dw.fact_checkin via COPY: missing data for column "checkin_count"
-CONTEXT:  COPY fact_checkin, line 2: "53007,2017051123,1"
+2025-09-01 15:37:44,939 [INFO] luigi: logging configured by default settings
+2025-09-01 15:37:45,488 [DEBUG] luigi-interface: Checking if StgTask() is complete
+2025-09-01 15:37:45,491 [INFO] luigi-interface: Informed scheduler that task   StgTask__99914b932b   has status   PENDING
+2025-09-01 15:37:45,492 [INFO] luigi-interface: Done scheduling tasks
+2025-09-01 15:37:45,493 [INFO] luigi-interface: Running Worker with 1 processes
+2025-09-01 15:37:45,495 [DEBUG] luigi-interface: Asking scheduler for work...
+2025-09-01 15:37:45,496 [DEBUG] luigi-interface: Pending tasks: 1
+2025-09-01 15:37:45,497 [INFO] luigi-interface: [pid 10332] Worker Worker(salt=7097785630, workers=1, host=DESKTOP-J2PLBJG, username=Admin, pid=10332) running   StgTask()
+2025-09-01 15:37:45,620 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\schema\schema.sql
+2025-09-01 15:37:45,864 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_business.sql
+2025-09-01 15:37:46,201 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_business.sql
+2025-09-01 15:37:46,202 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_checkin.sql
+2025-09-01 15:37:46,238 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_checkin.sql
+2025-09-01 15:37:46,238 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_review.sql
+2025-09-01 15:37:46,295 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_review.sql
+2025-09-01 15:37:46,295 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_user.sql
+2025-09-01 15:37:46,306 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_user.sql
+2025-09-01 15:37:46,307 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_user_temp.sql
+2025-09-01 15:37:46,317 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\stg_user_temp.sql
+2025-09-01 15:37:46,318 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\tip.sql
+2025-09-01 15:37:46,333 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\stg\tip.sql
+2025-09-01 15:37:46,334 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\01_dim_location.sql
+2025-09-01 15:37:46,351 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\01_dim_location.sql
+2025-09-01 15:37:46,351 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\02_dim_business.sql
+2025-09-01 15:37:46,360 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\02_dim_business.sql
+2025-09-01 15:37:46,361 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\03_dim_time.sql
+2025-09-01 15:37:46,372 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\03_dim_time.sql
+2025-09-01 15:37:46,373 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\04_dim_user.sql
+2025-09-01 15:37:46,376 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\dim\04_dim_user.sql
+2025-09-01 15:37:46,376 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\fact\01_fact_checkin.sql
+2025-09-01 15:37:46,389 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\fact\01_fact_checkin.sql
+2025-09-01 15:37:46,389 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\fact\02_fact_review.sql
+2025-09-01 15:37:46,400 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\fact\02_fact_review.sql
+2025-09-01 15:37:46,400 [INFO] config.logger_config: 🔹 Executing D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\fact\03_fact_tip.sql
+2025-09-01 15:37:46,411 [INFO] config.logger_config: ✅ Executed D:\HCMUT\Cao_hoc\Code_\yelp_etl\sql\ddl\dw\fact\03_fact_tip.sql
+2025-09-01 15:37:46,411 [INFO] config.logger_config: ✅ All tables created successfully!
+2025-09-01 15:37:46,411 [INFO] config.logger_config: 🔒 Connection closed.
+2025-09-01 15:37:46,415 [INFO] luigi-interface: [pid 10332] Worker Worker(salt=7097785630, workers=1, host=DESKTOP-J2PLBJG, username=Admin, pid=10332) done      StgTask()
+2025-09-01 15:37:46,418 [DEBUG] luigi-interface: 1 running tasks, waiting for next task to finish
+2025-09-01 15:37:46,450 [INFO] luigi-interface: Informed scheduler that task   StgTask__99914b932b   has status   DONE
+2025-09-01 15:37:46,451 [DEBUG] luigi-interface: Asking scheduler for work...
+2025-09-01 15:37:46,451 [DEBUG] luigi-interface: Done
+2025-09-01 15:37:46,451 [DEBUG] luigi-interface: There are no more tasks to run at this time
+2025-09-01 15:37:46,452 [INFO] luigi-interface: Worker Worker(salt=7097785630, workers=1, host=DESKTOP-J2PLBJG, username=Admin, pid=10332) was stopped. Shutting down Keep-Alive thread
+2025-09-01 15:37:46,453 [INFO] luigi-interface: 
+===== Luigi Execution Summary =====
 
-2025-08-28 12:31:42,902 [ERROR] config.logger_config: Lỗi ở ETL, missing data for column "checkin_count"
-CONTEXT:  COPY fact_checkin, line 2: "53007,2017051123,1"
+Scheduled 1 tasks of which:
+* 1 ran successfully:
+    - 1 StgTask()
 
-2025-08-28 12:31:41,576 [INFO] py4j.clientserver: Closing down clientserver connection
-2025-08-28 12:36:32,107 [INFO] config.logger_config: ▶️ Start reading table stg.stg_checkin from database postgres
-2025-08-28 12:36:41,884 [INFO] config.logger_config: ✅ Successfully read stg.stg_checkin (rows: 131930)
-2025-08-28 12:36:41,885 [INFO] config.logger_config: ▶️ Start reading table dw.dim_business from database postgres
-2025-08-28 12:36:42,836 [INFO] config.logger_config: ✅ Successfully read dw.dim_business (rows: 150346)
-2025-08-28 12:36:42,836 [INFO] config.logger_config: ▶️ Start reading table dw.dim_time from database postgres
-2025-08-28 12:36:43,522 [INFO] config.logger_config: ✅ Successfully read dw.dim_time (rows: 148057)
-2025-08-28 12:36:44,333 [INFO] config.logger_config: ✅ Successful transform fact_checkin!
-2025-08-28 12:45:44,663 [INFO] config.logger_config: ✅ Successfully loaded to dw.fact_checkin via COPY
-2025-08-28 12:45:46,348 [INFO] py4j.clientserver: Closing down clientserver connection
+This progress looks :) because there were no failed tasks or missing dependencies
+
+===== Luigi Execution Summary =====
+

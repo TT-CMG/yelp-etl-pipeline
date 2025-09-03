@@ -1,6 +1,8 @@
 from pyspark.sql.functions import col
 from config.logger_config import logger
+from prefect import task
 
+@task
 def transform_dim_location(spark, location_df):
   try:
     df_location = (

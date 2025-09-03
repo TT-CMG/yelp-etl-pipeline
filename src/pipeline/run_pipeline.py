@@ -1,3 +1,6 @@
+
+
+
 from config.logger_config import logger
 from src.load.load_stg import load_raw_data_to_stg
 from scripts.init_schema import init_schema
@@ -11,30 +14,37 @@ from src.transform.dim_business import transform_dim_business, transform_categor
 from src.transform.fact_review import transform_fact_review
 from src.transform.dim_location import transform_dim_location
 from src.transform.fact_checkin import transform_fact_checkin
-
 import time
+from prefect import flow, task
+from prefect_dask import DaskTaskRunner
 
+
+@task
 def run_dim_user_pipeline(spark):
   stg_user = read_data_from_pg(spark, 'postgres', 'stg_user', 'stg')
   dim_user = transform_dim_user(spark, stg_user)
   load_to_postgres(dim_user, 'dw.dim_user')
 
+@task
 def run_dim_time_pipeline(spark):
   dim_time = create_dim_time(spark, '2005-03-01', '2022-01-20')
   load_to_postgres(dim_time, 'dw.dim_time')
-    
+
+@task    
 def run_dim_business_pipeline(spark):
   stg_business = read_data_from_pg(spark, 'postgres', 'stg_business', 'stg')
   dim_location = read_data_from_pg(spark, 'postgres', 'dim_location', 'dw')
   dim_business = transform_dim_business(spark,stg_business, dim_location)
   load_to_postgres(dim_business, 'dw.dim_business')
 
+@task
 def run_dim_category_pipeline(spark):
   stg_business = read_data_from_pg(spark, 'postgres', 'stg_business', 'stg')
   dim_category = transform_category(spark, stg_business)
   
   load_to_postgres(dim_category, 'dw.dim_category')
-  
+
+@task
 def run_bridge_category_pipeline(spark):
   stg_business = read_data_from_pg(spark, 'postgres', 'stg_business', 'stg')
   dim_business = read_data_from_pg(spark, 'postgres', 'dim_business', 'dw')
@@ -44,13 +54,8 @@ def run_bridge_category_pipeline(spark):
   
   load_to_postgres(bridge_category, 'dw.bridge_category')
 
-def run_dim_locatin_pipeline(spark):
-  stg_business = read_data_from_pg(spark, 'postgres', 'stg_business', 'stg')
-  
-  dim_location = transform_dim_location(spark, stg_business)
-  
-  load_to_postgres(dim_location, 'dw.dim_location')
-  
+
+@task
 def run_fact_review_pipeline(spark):
   stg_review = read_data_from_pg(spark, 'postgres', 'stg_review', 'stg')
   dim_user = read_data_from_pg(spark, 'postgres', 'dim_user', 'dw')
@@ -61,6 +66,7 @@ def run_fact_review_pipeline(spark):
   
   load_to_postgres(fact_review, 'dw.fact_review')
 
+@task
 def run_fact_checkin_pipeline(spark):
   stg_checkin = read_data_from_pg(spark, 'postgres', "stg_checkin", "stg")
   dim_business = read_data_from_pg(spark, 'postgres', "dim_business", "dw")
@@ -73,30 +79,58 @@ def run_fact_checkin_pipeline(spark):
   end = time.time()
   print(f"loading time: {end - start: .2f}")
   # load_to_postgres(fact_checkin, 'dw.fact_checkin')
+
+@task
+def run_dim_time_pipeline(spark):
+  dim_time = create_dim_time(spark, '2005-03-01', '2022-01-20')
+  load_to_postgres(dim_time, 'dw.dim_time')
+
+
+@task
+def run_dim_location_pipeline(spark):
+  stg_business = read_data_from_pg(spark, 'postgres', 'stg_business', 'stg')
   
+  dim_location = transform_dim_location(spark, stg_business)
+  
+  load_to_postgres(dim_location, 'dw.dim_location')
+
+
+# @flow(name="yelp_etl", task_runner=DaskTaskRunner())
+@flow(name="yelp_etl")
 def etl_pipeline():
   try:
     spark = spark_session()
+    # init db
+    init_schema()
     
-    # # init db
-    # init_schema()
-    
-    # # extract and load to stg
+    # extract and load to stg
     # load_raw_data_to_stg()
     
-    # run_dim_locatin_pipeline(spark=spark)
-    # run_dim_time_pipeline(spark=spark)
-    # run_dim_business_pipeline(spark=spark)
-    # run_dim_category_pipeline(spark=spark)
-    # run_bridge_category_pipeline(spark=spark)
-    # run_dim_user_pipeline(spark=spark)
-    # run_fact_review_pipeline(spark=spark)
+    run_dim_location_pipeline(spark=spark)
+    run_dim_time_pipeline(spark=spark)
+    run_dim_business_pipeline(spark=spark)
+    run_dim_category_pipeline(spark=spark)
+    run_bridge_category_pipeline(spark=spark)
+    run_dim_user_pipeline(spark=spark)
+    run_fact_review_pipeline(spark=spark)
     run_fact_checkin_pipeline(spark=spark)
-    # extract and load to dw
-    # transform and load data to dw
-
-    spark.stop()
+    
+    # dim_location = run_dim_location_pipeline.submit(spark=spark)
+    # dim_time = run_dim_time_pipeline.submit(spark=spark)
+    # dim_user = run_dim_user_pipeline.submit(spark=spark)
+    
+    # dim_category =run_dim_category_pipeline.submit(spark=spark)
+    # dim_business = run_dim_business_pipeline.submit(spark, wait_for=[dim_location])
+    # bridge_business_category = run_bridge_category_pipeline.submit(spark=spark, wait_for=[dim_business, dim_category])
+    
+    
+    # fact_review = run_fact_review_pipeline.submit(spark=spark, wait_for=[dim_business,dim_user,dim_time])
+    
+    
+    
+    
   except Exception as e:
     logger.error("Lỗi ở ETL, %s", e)
     raise
-  
+  finally:
+    spark.stop()

@@ -2,7 +2,7 @@ import json, psycopg2
 import psycopg2.extras
 from src.utils.db import get_connection
 from config.logger_config import logger
-
+from prefect import flow, task
 
 # Mappings: table → (columns, json_fields, casts)
 
@@ -86,7 +86,9 @@ MAPPINGS = {
     }
 }
 
+
 # load raw data vào stg
+@task
 def load_json_to_stg(conn, table_name, mapping, batch_size=1000):
     file_path = mapping["file"]
     cols = mapping["columns"]
@@ -132,6 +134,7 @@ def insert_batch(cur, table, cols, batch):
 
 
 # if __name__ == "__main__":
+@flow
 def load_raw_data_to_stg():
     try:
         conn = get_connection('postgres')

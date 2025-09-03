@@ -2,7 +2,6 @@ from src.utils.db import load_db_config
 from config.logger_config import logger
 from config.settings import DATA_EXPORT_DIR
 import tempfile
-import psycopg2 as db
 from config.logger_config import logger
 from src.utils.db import load_db_config
 import os
